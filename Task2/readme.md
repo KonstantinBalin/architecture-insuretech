@@ -1,5 +1,6 @@
 ### 1. Deployment (1 реплика, limit памяти 30Mi)
 ```bash
+minikube start
 kubectl apply -f task2-deployment.yaml
 ```
 
@@ -9,6 +10,7 @@ kubectl apply -f task2-service.yaml
 
 # Получить URL в minikube
 minikube service scaletestapp --url
+## http://127.0.0.1:64643
 ```
 
 ### 3. HPA по памяти (target 80%, maxReplicas=10)
@@ -43,6 +45,6 @@ locust
 ```bash
 minikube dashboard
 ```
-На скриншотах показан:
+На скриншотах (result_scrin_1.png, result_scrin_2.png, result_scrin_3.png, result_scrin_4.png, result_scrin_5.png) показан: 
 рост REPLICAS в Deployment;
 состояние HPA (kubectl get hpa) и pods (kubectl get pods / kubectl top pods).
